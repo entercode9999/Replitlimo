@@ -38,54 +38,37 @@
   --animate-marquee-slow: marquee 60s linear infinite;
 }
 
+/* LIGHT THEME — global default */
 :root {
-  /* Dark mode as default for the premium feel, with specific light sections */
-  --background: 0 0% 4%; /* #0a0a0a */
-  --foreground: 0 0% 100%;
-  
-  --card: 221 39% 11%; /* #111827 */
-  --card-foreground: 0 0% 100%;
-  
-  --popover: 0 0% 4%;
-  --popover-foreground: 0 0% 100%;
-  
-  --primary: 196 92% 52%; /* #14b7f4 - Electric Blue */
+  --background: 0 0% 99%;       /* #fcfcfc */
+  --foreground: 220 15% 10%;    /* near black */
+
+  --card: 0 0% 100%;
+  --card-foreground: 220 15% 10%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 15% 10%;
+
+  --primary: 196 92% 45%;       /* #0fa8e0 — electric blue, slightly deeper on white */
   --primary-foreground: 0 0% 100%;
-  
-  --secondary: 0 0% 15%;
-  --secondary-foreground: 0 0% 100%;
-  
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 65%;
-  
-  --accent: 196 92% 52%;
+
+  --secondary: 210 20% 96%;     /* very light blue-grey */
+  --secondary-foreground: 220 15% 20%;
+
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 14% 45%;
+
+  --accent: 196 92% 45%;
   --accent-foreground: 0 0% 100%;
-  
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  
-  --border: 0 0% 20%;
-  --input: 0 0% 20%;
-  --ring: 196 92% 52%;
-  
-  --radius: 0.25rem;
-}
 
-.theme-light {
-  --background: 0 0% 99%;
-  --foreground: 0 0% 8%;
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 8%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 8%;
-  --secondary: 220 14% 96%;
-  --secondary-foreground: 0 0% 8%;
-  --muted: 220 14% 96%;
-  --muted-foreground: 0 0% 40%;
-  --accent: 196 92% 52%;
-  --accent-foreground: 0 0% 100%;
-  --border: 0 0% 88%;
-  --input: 0 0% 88%;
+  --border: 214 20% 88%;
+  --input: 214 20% 88%;
+  --ring: 196 92% 45%;
+
+  --radius: 0.25rem;
 }
 
 @layer base {
@@ -105,7 +88,6 @@
   100% { transform: translateX(-50%); }
 }
 
-/* Custom utility for the section label */
 @layer utilities {
   .section-label {
     @apply block font-caps text-xs font-bold text-primary uppercase tracking-[0.15em] mb-3;
@@ -113,11 +95,12 @@
   .pause-on-hover:hover > div {
     animation-play-state: paused;
   }
-  .bg-glass {
-    @apply bg-background/80 backdrop-blur-md border-b border-border/50;
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  .bg-card-glass {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;

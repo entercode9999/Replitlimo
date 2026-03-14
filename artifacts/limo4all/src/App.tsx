@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-import { Home } from "@/pages/Home";
 import { HomeLight } from "@/pages/HomeLight";
 import { Booking } from "@/pages/Booking";
 import { Quote } from "@/pages/Quote";
@@ -12,7 +11,6 @@ import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
 
-// Reusable wrapper for generic pages to keep App.tsx clean
 const makePage = (title: string, subtitle: string) => () => (
   <GenericPage title={title} subtitle={subtitle} />
 );
@@ -20,12 +18,10 @@ const makePage = (title: string, subtitle: string) => () => (
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/light" component={HomeLight} />
+      <Route path="/" component={HomeLight} />
       <Route path="/booking" component={Booking} />
       <Route path="/quote" component={Quote} />
-      
-      {/* Generated Service Pages */}
+
       <Route path="/airport" component={makePage("Airport Transfers", "Flat-rate luxury transportation to Pearson YYZ, Billy Bishop, and Buffalo.")} />
       <Route path="/corporate" component={makePage("Corporate Car Service", "Monthly billing, dedicated accounts, and executive roadshows.")} />
       <Route path="/wedding" component={makePage("Wedding Transportation", "Immaculate vehicles and coordinated logistics for your special day.")} />

@@ -19,7 +19,7 @@ export function TrustStrip() {
               <div className="w-12 h-12 rounded-full bg-background border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 transition-colors">
                 <item.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
               </div>
-              <strong className="text-xs font-sans text-muted-foreground group-hover:text-white transition-colors max-w-[120px]">
+              <strong className="text-xs font-sans text-muted-foreground group-hover:text-foreground transition-colors max-w-[120px]">
                 {item.label}
               </strong>
             </div>
