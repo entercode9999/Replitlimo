@@ -16,6 +16,16 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### `artifacts/limo4all` — Limo4All Website
+Premium chauffeur service website for Toronto & GTA.
+- Route `/` = dark luxury theme
+- Route `/light` = light/white theme (for design comparison)
+- Stack: React + Vite, Tailwind, Framer Motion, Lucide, Wouter
+- Sections: Hero, Booking Widget, Trust Strip, Ticker, Intro, Promise Cards, Fleet (tabbed), Services, Tours, Cities, Reviews Carousel, FAQ, CTA Band
+- Fleet: Mercedes S-Class, Cadillac Escalade, Chevrolet Suburban, Mercedes Sprinter, Stretch Limo
+
 ## Structure
 
 ```text
