@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Limo4All - Premium Limo & Chauffeur Service"
+version = "1.0.0"
+id = "artifacts/limo4all"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 24559
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/limo4all run dev"
+
+[services.env]
+PORT = "24559"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/limo4all", "run", "build"]
+publicDir = "artifacts/limo4all/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

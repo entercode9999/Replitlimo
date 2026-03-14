@@ -1,0 +1,25 @@
+packages:
+  "framer-motion": "For smooth reveal animations and page transitions"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "@hookform/resolvers": "Zod validation for booking forms"
+  "lucide-react": "Beautiful consistent icons"
+
+images:
+  - path: "artifacts/limo4all/public/images/hero-bg.png"
+    description: "Luxurious black Cadillac Escalade SUV parked at night in front of a modern illuminated high-end airport terminal, cinematic lighting, sleek reflections, professional premium feel, deep electric blue accents"
+    aspect_ratio: "16:9"
+  - path: "artifacts/limo4all/public/images/fleet-sedan.png"
+    description: "Premium black executive sedan like Lincoln MKT or Genesis G90, studio lighting, dark background, side angle, high end luxury"
+    aspect_ratio: "16:9"
+  - path: "artifacts/limo4all/public/images/fleet-suv.png"
+    description: "Premium black luxury SUV like Cadillac Escalade, studio lighting, dark background, side angle, high end luxury"
+    aspect_ratio: "16:9"
+  - path: "artifacts/limo4all/public/images/fleet-sprinter.png"
+    description: "Premium black Mercedes Sprinter passenger van, studio lighting, dark background, side angle, high end luxury"
+    aspect_ratio: "16:9"
+
+notes:
+  - This is a frontend-only recreation.
+  - Using static state for form submissions and UI toggles.
+  - Implemented responsive design matching the requested premium luxury aesthetic.

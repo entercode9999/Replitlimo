@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&family=Open+Sans:wght@300;400;600&family=Roboto+Condensed:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-sans: 'Open Sans', sans-serif;
+  --font-caps: 'Roboto Condensed', sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-slow: marquee 60s linear infinite;
+}
+
+:root {
+  /* Dark mode as default for the premium feel, with specific light sections */
+  --background: 0 0% 4%; /* #0a0a0a */
+  --foreground: 0 0% 100%;
+  
+  --card: 221 39% 11%; /* #111827 */
+  --card-foreground: 0 0% 100%;
+  
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 100%;
+  
+  --primary: 196 92% 52%; /* #14b7f4 - Electric Blue */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  
+  --accent: 196 92% 52%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 196 92% 52%;
+  
+  --radius: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Custom utility for the section label */
+@layer utilities {
+  .section-label {
+    @apply block font-caps text-xs font-bold text-primary uppercase tracking-[0.15em] mb-3;
+  }
+  .pause-on-hover:hover > div {
+    animation-play-state: paused;
+  }
+  .bg-glass {
+    @apply bg-background/80 backdrop-blur-md border-b border-border/50;
+  }
+  .bg-card-glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+  }
+}

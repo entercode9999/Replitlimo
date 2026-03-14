@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limo4All | Premium Limo & Chauffeur Service — Toronto & GTA</title>
+  <meta name="description" content="Professional limo and chauffeur service across the Greater Toronto Area. Airport transfers from $75, corporate, weddings and events. Upfront pricing, 24/7. Call 1-800-XXX-XXXX.">
+  <link rel="canonical" href="index.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Economica:wght@400;700&family=Roboto+Condensed:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ===================== PAGE-SPECIFIC STYLES ===================== */
+
+    /* TRUST STRIP — compact, no subtitle, matches airport.html */
+    .trust-strip { background: var(--dark); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 0 24px; }
+    .trust-strip-inner { max-width:1170px; margin:0 auto; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; }
+    .ts-item { display:flex; align-items:center; gap:8px; padding:14px 22px; border-right:1px solid rgba(255,255,255,0.07); white-space:nowrap; }
+    .ts-item:last-child { border-right:none; }
+    .ts-item svg { width:15px; height:15px; stroke:var(--blue); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+    .ts-item strong { color:var(--white); font-family:'Roboto Condensed',sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; }
+
+    /* SERVICES TICKER */
+    .services-ticker { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); overflow:hidden; padding:13px 0; position:relative; }
+    .services-ticker::before,.services-ticker::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; }
+    .services-ticker::before { left:0; background:linear-gradient(to right,var(--dark),transparent); }
+    .services-ticker::after { right:0; background:linear-gradient(to left,var(--dark),transparent); }
+    .ticker-track { display:flex; white-space:nowrap; animation:ticker-scroll 45s linear infinite; width:max-content; }
+    .services-ticker:hover .ticker-track { animation-play-state:paused; }
+    .ticker-track a { color:rgba(255,255,255,0.65); font-family:'Roboto Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; white-space:nowrap; padding:0 28px; text-decoration:none; transition:color 0.15s; }
+    .ticker-track a:hover { color:var(--blue); }
+    .ticker-track a::after { content:'—'; color:var(--blue); margin-left:28px; }
+    @keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* PROMISE STRIP */
+    .promise-strip { background:var(--dark3); padding:64px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .promise-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+    .promise-card { padding:36px 28px; border-right:1px solid rgba(255,255,255,0.07); text-align:center; }
+    .promise-card:last-child { border-right:none; }
+    .promise-icon { width:56px; height:56px; background:rgba(20,183,244,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 18px; }
+    .promise-icon svg { width:28px; height:28px; fill:none; stroke:var(--blue); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .promise-card h4 { font-family:'Roboto Condensed',sans-serif; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--white); margin-bottom:10px; }
+    .promise-card p { font-size:13px; color:rgba(255,255,255,0.45); line-height:1.7; font-weight:300; }
+
+    /* INTRO SECTION */
+    .intro-section { background:var(--white); padding:64px 0; border-bottom:1px solid var(--border); }
+    .intro-grid { display:grid; grid-template-columns:1fr; gap:0; align-items:start; }
+    .intro-stat-box { display:none; }
+    .intro-stat-box .stat-big { font-family:'Economica',sans-serif; font-size:64px; font-weight:700; color:var(--blue); line-height:1; }
+    .intro-stat-box .stat-big sup { font-size:32px; vertical-align:super; }
+    .intro-stat-box .stat-label { font-family:'Roboto Condensed',sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.55); margin-top:6px; display:block; }
+    .intro-sidebar-links { display:none; }
+    .intro-sidebar-links h4 { font-family:'Roboto Condensed',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--dark); margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    .intro-sidebar-links a { display:block; font-size:13px; color:var(--blue); padding:6px 0; border-bottom:1px solid var(--border); font-family:'Open Sans',sans-serif; font-weight:600; transition:color 0.15s; }
+    .intro-sidebar-links a:last-child { border-bottom:none; }
+    .intro-sidebar-links a:hover { color:var(--blue-dark); }
+    .intro-body { max-width:900px; }
+    .intro-body h2 { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:24px; line-height:1.2; }
+    .intro-body h2 span { color:var(--blue); font-style:normal; }
+    .intro-body p { font-size:15px; color:var(--text-light); line-height:1.9; margin-bottom:20px; font-weight:300; }
+    .intro-body h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; color:var(--dark); margin:32px 0 18px; }
+    .intro-checklist { display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; list-style:none; padding:0; }
+    .intro-checklist li { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text); font-family:'Open Sans',sans-serif; }
+    .intro-checklist li::before { content:''; display:inline-block; width:18px; height:18px; background:var(--blue); border-radius:50%; flex-shrink:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-size:11px; background-repeat:no-repeat; background-position:center; }
+
+    /* VEHICLES SECTION */
+    .vehicles-section { background:var(--white); padding:80px 0; border-bottom:1px solid var(--border); }
+    .vehicles-section .section-header { text-align:center; margin-bottom:48px; }
+    .vehicles-section .section-header h2 { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:12px; }
+    .vehicles-section .section-header h2 span { color:var(--blue); font-style:normal; }
+    .vehicles-section .section-header p { font-size:15px; color:var(--text-light); max-width:580px; margin:0 auto; font-weight:300; line-height:1.65; }
+    .vehicle-tabs-row { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .vtab-card { border:1px solid var(--border); background:var(--white); padding:32px 28px; position:relative; transition:all 0.28s; }
+    .vtab-card:hover { border-color:var(--blue); box-shadow:0 10px 40px rgba(20,183,244,0.1); transform:translateY(-3px); }
+    .vtab-card.featured { border-color:var(--blue); border-top:3px solid var(--blue); }
+    .vtab-badge { position:absolute; top:-1px; right:20px; background:var(--blue); color:var(--white); font-family:'Roboto Condensed',sans-serif; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; }
+    .vtab-card h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:700; color:var(--dark); margin-bottom:4px; }
+    .vtab-model { font-family:'Roboto Condensed',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light); margin-bottom:16px; display:block; }
+    .vtab-card p { font-size:13px; color:var(--text-light); line-height:1.75; margin-bottom:18px; font-weight:300; }
+    .vtab-specs { list-style:none; padding:0; margin-bottom:22px; }
+    .vtab-specs li { font-size:12px; color:var(--text); padding:5px 0; border-bottom:1px solid var(--border); font-family:'Open Sans',sans-serif; display:flex; align-items:center; gap:8px; }
+    .vtab-specs li:last-child { border-bottom:none; }
+    .vtab-specs li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--blue); flex-shrink:0; }
+    .vtab-price { font-family:'Economica',sans-serif; font-size:36px; font-weight:700; color:var(--blue); display:block; }
+    .vtab-price span { font-family:'Open Sans',sans-serif; font-size:12px; color:var(--text-light); font-weight:400; vertical-align:middle; }
+
+    /* STATS BAR */
+    .stats-bar { background:var(--dark); border-bottom:1px solid rgba(255,255,255,0.06); }
+    .stats-bar-inner { max-width:1170px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:repeat(4,1fr); }
+    .stat-item { padding:30px 24px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); }
+    .stat-item:last-child { border-right:none; }
+    .stat-number { font-family:'Economica',sans-serif; font-size:52px; font-weight:700; color:var(--blue); display:block; line-height:1; margin-bottom:4px; }
+    .stat-suffix { font-size:28px; }
+    .stat-label { font-family:'Roboto Condensed',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.4); }
+
+    /* POPULAR ROUTES */
+    .popular-routes { background:#f8f9fa; padding:80px 0; border-bottom:1px solid var(--border); }
+    .popular-routes .section-header { text-align:center; margin-bottom:40px; }
+    .popular-routes .section-header h2 { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:12px; }
+    .popular-routes .section-header h2 span { color:var(--blue); font-style:normal; }
+    .popular-routes .section-header p { font-size:14px; color:var(--text-light); max-width:620px; margin:0 auto; font-weight:300; line-height:1.65; }
+    .routes-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .route-card { border:1px solid var(--border); background:var(--white); padding:22px 20px; display:flex; flex-direction:column; gap:8px; transition:all 0.25s; text-decoration:none; color:inherit; }
+    .route-card:hover { border-color:var(--blue); background:#f0fbff; transform:translateY(-3px); box-shadow:0 8px 28px rgba(20,183,244,0.1); }
+    .route-city { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--dark); }
+    .route-desc { font-size:11px; color:var(--text-light); text-transform:uppercase; letter-spacing:0.08em; font-family:'Roboto Condensed',sans-serif; font-weight:700; }
+    .route-prices { display:flex; gap:14px; align-items:flex-end; padding-top:10px; border-top:1px solid var(--border); margin-top:4px; }
+    .route-price-item { display:flex; flex-direction:column; }
+    .route-price-label { font-size:10px; font-family:'Roboto Condensed',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light); }
+    .route-price-val { font-family:'Economica',sans-serif; font-size:30px; font-weight:700; color:var(--blue); line-height:1; }
+    .route-tag { font-size:10px; font-family:'Roboto Condensed',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); background:rgba(20,183,244,0.08); border:1px solid rgba(20,183,244,0.2); padding:3px 8px; align-self:flex-start; }
+    .routes-note { margin-top:20px; font-size:12px; color:var(--text-light); text-align:center; font-style:italic; }
+    .routes-cta { text-align:center; margin-top:28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .pricing-note { background:#f0fbff; border:1px solid rgba(20,183,244,0.2); padding:14px 20px; font-size:13px; color:var(--text-light); margin-top:20px; line-height:1.6; }
+
+    /* COVERAGE SECTION */
+    .coverage-section { background:#f8f9fa; padding:60px 0; border-bottom:1px solid var(--border); }
+    .coverage-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+    .coverage-text h2 { font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:22px; line-height:1.2; }
+    .coverage-text h2 span { color:var(--blue); font-style:normal; }
+    .coverage-text p { font-size:14px; color:var(--text-light); line-height:1.85; margin-bottom:18px; font-weight:300; }
+    .coverage-text h3 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--dark); margin:24px 0 14px; }
+    .highway-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    .highway-tag { background:var(--dark); color:var(--white); font-family:'Roboto Condensed',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 12px; }
+    .neighborhood-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+    .neighborhood-grid a { font-size:12px; color:var(--text); padding:7px 10px; border:1px solid var(--border); background:var(--white); display:block; font-family:'Open Sans',sans-serif; transition:all 0.15s; text-align:center; text-decoration:none; }
+    .neighborhood-grid a:hover { background:#f0fbff; border-color:var(--blue); color:var(--blue); }
+
+    /* WHY CHOOSE SECTION */
+    .why-choose-section { background:var(--white); padding:60px 0; border-bottom:1px solid var(--border); }
+    .why-choose-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+    .why-choose-text h2 { font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:22px; line-height:1.2; }
+    .why-choose-text h2 span { color:var(--blue); font-style:normal; }
+    .why-choose-text p { font-size:14px; color:var(--text-light); line-height:1.85; margin-bottom:18px; font-weight:300; }
+    .advantage-list { list-style:none; padding:0; margin-top:10px; }
+    .advantage-list li { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--text); padding:10px 0; border-bottom:1px solid var(--border); font-family:'Open Sans',sans-serif; }
+    .advantage-list li:last-child { border-bottom:none; }
+    .advantage-list li::before { content:''; display:inline-block; width:20px; height:20px; background:rgba(20,183,244,0.1); border-radius:50%; flex-shrink:0; margin-top:1px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314b7f4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-size:12px; background-repeat:no-repeat; background-position:center; }
+    .comparison-box { background:#fafafa; border:1px solid var(--border); padding:32px; margin-top:32px; }
+    .comparison-box h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; color:var(--dark); margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+    .comp-table { width:100%; border-collapse:collapse; }
+    .comp-table th { text-align:left; padding:10px 12px; font-family:'Roboto Condensed',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; background:var(--dark); color:var(--white); }
+    .comp-table th.limo4all-col { background:var(--blue); }
+    .comp-table td { padding:10px 12px; font-size:12px; border-bottom:1px solid var(--border); color:var(--text); }
+    .comp-table td:first-child { font-weight:600; color:var(--dark); font-family:'Roboto Condensed',sans-serif; font-size:13px; }
+    .comp-table tr:nth-child(even) td { background:#f9f9f9; }
+    .comp-table .yes { color:#16a34a; font-weight:700; font-family:'Roboto Condensed',sans-serif; }
+    .comp-table .no { color:#dc2626; font-family:'Roboto Condensed',sans-serif; }
+
+    /* AREAS SERVED SECTION */
+    .areas-served-section { background:var(--white); padding:60px 0; border-bottom:1px solid var(--border); }
+    .areas-served-section .section-header { text-align:center; margin-bottom:48px; }
+    .areas-served-section .section-header h2 { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:12px; }
+    .areas-served-section .section-header h2 span { color:var(--blue); font-style:normal; }
+    .areas-served-section .section-header p { font-size:15px; color:var(--text-light); max-width:700px; margin:0 auto; font-weight:300; line-height:1.7; }
+    .cities-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
+    .city-tag { background:var(--white); border:1px solid var(--border); padding:12px 16px; text-align:center; font-family:'Open Sans',sans-serif; font-size:14px; color:var(--text); transition:all 0.2s; text-decoration:none; display:block; }
+    .city-tag:hover { border-color:var(--blue); background:#f0fbff; color:var(--blue); }
+    .city-tag strong { font-weight:600; }
+
+    /* PROCESS SECTION */
+    .process-section { background:#f8f9fa; padding:80px 0; border-bottom:1px solid var(--border); }
+    .process-section .section-header { text-align:center; margin-bottom:52px; }
+    .process-section .section-header h2 { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:10px; }
+    .process-section .section-header h2 span { color:var(--blue); font-style:normal; }
+    .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+    .process-step { padding:32px 24px; border-right:1px solid var(--border); position:relative; text-align:center; }
+    .process-step:last-child { border-right:none; }
+    .process-num { width:60px; height:60px; background:var(--blue); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; font-family:'Economica',sans-serif; font-size:28px; font-weight:700; color:var(--white); }
+    .process-step h4 { font-family:'Roboto Condensed',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--dark); margin-bottom:12px; }
+    .process-step p { font-size:13px; color:var(--text-light); line-height:1.7; font-weight:300; }
+
+    /* FAQ 2-COLUMN */
+    .faq-section-full { background:#f8f9fa; padding:80px 0; border-bottom:1px solid var(--border); }
+    .faq-section-full .section-header { text-align:center; margin-bottom:48px; }
+    .faq-section-full .section-header h2 { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; font-style:italic; color:var(--dark); margin-bottom:10px; }
+    .faq-section-full .section-header h2 span { color:var(--blue); font-style:normal; }
+    .faq-columns { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .faq-item-full { border:1px solid var(--border); border-radius:3px; background:var(--white); overflow:hidden; }
+    .faq-question-full { padding:16px 20px; font-family:'Roboto Condensed',sans-serif; font-size:14px; font-weight:700; color:var(--dark); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; transition:background 0.15s; }
+    .faq-question-full:hover { background:#f0fbff; color:var(--blue); }
+    .faq-item-full.open .faq-question-full { background:#f0fbff; color:var(--blue); }
+    .faq-question-full svg { width:18px; height:18px; flex-shrink:0; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform 0.2s; }
+    .faq-item-full.open .faq-question-full svg { transform:rotate(180deg); }
+    .faq-answer-full { display:none; padding:14px 20px; font-size:13px; color:var(--text-light); line-height:1.75; border-top:1px solid var(--border); font-weight:300; }
+    .faq-item-full.open .faq-answer-full { display:block; }
+
+    /* REVIEWS CAROUSEL */
+    .reviews-section { background:var(--dark3); padding:80px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .reviews-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:48px; flex-wrap:wrap; gap:24px; }
+    .reviews-header h2 { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; font-style:italic; color:var(--white); margin:0; }
+    .reviews-header h2 span { color:var(--blue); font-style:normal; }
+    .google-badge { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); padding:18px 24px; text-align:center; border-radius:3px; }
+    .google-badge .g-score { font-family:'Economica',sans-serif; font-size:40px; font-weight:700; color:var(--blue); line-height:1; }
+    .google-badge .g-stars { color:#f59e0b; font-size:18px; letter-spacing:2px; display:block; margin:4px 0; }
+    .google-badge .g-label { font-family:'Roboto Condensed',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.4); }
+    .reviews-carousel-wrap { overflow:hidden; position:relative; }
+    .reviews-carousel-wrap::before,.reviews-carousel-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none; }
+    .reviews-carousel-wrap::before { left:0; background:linear-gradient(to right,var(--dark3),transparent); }
+    .reviews-carousel-wrap::after { right:0; background:linear-gradient(to left,var(--dark3),transparent); }
+    .reviews-track { display:flex; gap:20px; animation:reviews-scroll 40s linear infinite; width:max-content; }
+    .reviews-carousel-wrap:hover .reviews-track { animation-play-state:paused; }
+    @keyframes reviews-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .review-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:28px; width:360px; flex-shrink:0; border-radius:3px; }
+    .review-stars { color:#f59e0b; font-size:14px; letter-spacing:2px; margin-bottom:14px; }
+    .review-card blockquote { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.8; font-style:italic; font-weight:300; margin-bottom:18px; }
+    .review-author { padding-top:14px; border-top:1px solid rgba(255,255,255,0.07); }
+    .review-author strong { display:block; font-family:'Cormorant Garamond',serif; font-size:16px; color:var(--white); font-weight:700; }
+    .review-author span { font-family:'Roboto Condensed',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.3); }
+
+    /* BOOKING WIDGET */
+    .bfb-service-row { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:12px; }
+    .bfb-service-btn { padding:8px 4px; text-align:center; font-family:'Roboto Condensed',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; background:#f5f5f5; color:var(--text); border:1px solid var(--border); cursor:pointer; transition:all 0.15s; }
+    .bfb-service-btn.active,.bfb-service-btn:hover { background:var(--blue); color:var(--white); border-color:var(--blue); }
+
+    /* CTA BAND */
+    .cta-band { background:linear-gradient(135deg,#0a0a0a 0%,#0d1a26 100%); padding:68px 0; position:relative; overflow:hidden; }
+    .cta-band::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%,rgba(20,183,244,0.1) 0%,transparent 60%); }
+    .cta-band-inner { position:relative; z-index:1; text-align:center; max-width:700px; margin:0 auto; padding:0 24px; }
+    .cta-band h2 { font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:600; font-style:italic; color:var(--white); margin-bottom:14px; line-height:1.2; }
+    .cta-band h2 span { color:var(--blue); font-style:normal; }
+    .cta-band p { color:rgba(255,255,255,0.6); font-size:15px; margin-bottom:32px; line-height:1.65; font-weight:300; }
+    .cta-band-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .intro-grid,.coverage-grid,.why-choose-grid { grid-template-columns:1fr; }
+      .intro-sidebar { display:none; }
+      .vehicle-tabs-row { grid-template-columns:1fr 1fr; }
+      .routes-grid { grid-template-columns:repeat(2,1fr); }
+      .promise-grid { grid-template-columns:1fr 1fr; }
+      .process-grid { grid-template-columns:1fr 1fr; }
+      .faq-columns { grid-template-columns:1fr; }
+      .stats-bar-inner { grid-template-columns:repeat(2,1fr); }
+      .cities-grid { grid-template-columns:repeat(3,1fr); }
+    }
+    @media (max-width:768px) {
+      .vehicle-tabs-row,.routes-grid { grid-template-columns:1fr; }
+      .intro-checklist,.premium-list { grid-template-columns:1fr; }
+      .neighborhood-grid { grid-template-columns:1fr 1fr; }
+      .process-grid { grid-template-columns:1fr 1fr; }
+      .bfb-service-row { grid-template-columns:repeat(4,1fr); }
+      .cities-grid { grid-template-columns:repeat(3,1fr); }
+    }
+    @media (max-width:580px) {
+      .promise-grid,.process-grid { grid-template-columns:1fr; }
+      .neighborhood-grid { grid-template-columns:1fr 1fr; }
+      .routes-grid { grid-template-columns:1fr; }
+      .stats-bar-inner { grid-template-columns:1fr 1fr; }
+      .cities-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
+    <strong>Upfront Pricing. No Surprises.</strong> — Airport Transfers from $75 &nbsp;|&nbsp; Corporate, Wedding &amp; Events &nbsp;|&nbsp; Call <a href="tel:+18001234567" style="color:inherit;text-decoration:underline;">1-800-XXX-XXXX</a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="index.html"><img src="assets/logo.jpg" alt="Limo4All"></a>
+      </div>
+      <nav class="header-nav" id="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="airport.html">Airport</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="wedding.html">Wedding</a>
+        <a href="events.html">Events</a>
+        <a href="hourly.html">Hourly</a>
+        <a href="tours.html">Tours</a>
+        <a href="fleet.html">Fleet</a>
+        <a href="locations.html">Locations</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="quote.html" class="fifa-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          FIFA 2026
+        </a>
+        <div class="header-phone-wrap">
+          <span class="header-phone-label">Reservations 24/7</span>
+          <a href="tel:+18001234567" class="header-phone-number">1-800-XXX-XXXX</a>
+        </div>
+        <div class="header-buttons">
+          <a href="booking.html" class="btn-book">Book Now</a>
+          <a href="quote.html" class="btn-quote">Get Quote</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="section-label">GTA's Premier Chauffeur Service</span>
+        <h1>Arrive in Style. <span>Every Time.</span></h1>
+        <p>Executive Cadillac Escalade, Suburban &amp; Mercedes fleet. Background-checked chauffeurs. Upfront flat rates — no surge, no surprises. Serving Toronto &amp; the GTA 24/7.</p>
+        <div class="hero-trust">
+          <span class="trust-badge"><strong>4.9/5</strong> Google Rating</span>
+          <span class="trust-badge"><strong>10,000+</strong> Rides</span>
+          <span class="trust-badge"><strong>Licensed</strong> &amp; Insured</span>
+          <span class="trust-badge"><strong>24/7</strong> Dispatch</span>
+        </div>
+        <div class="hero-cta">
+          <a href="booking.html" class="btn-hero-book">Book Your Ride</a>
+          <a href="tel:+18001234567" class="btn-hero-call">Call 1-800-XXX-XXXX</a>
+        </div>
+      </div>
+
+      <!-- CHECK PRICE WIDGET -->
+      <div class="booking-form-box">
+        <h3>Check Your Price</h3>
+        <div class="bfb-service-row">
+          <button class="bfb-service-btn active" onclick="setService(this)">Airport</button>
+          <button class="bfb-service-btn" onclick="setService(this)">Corporate</button>
+          <button class="bfb-service-btn" onclick="setService(this)">Wedding</button>
+          <button class="bfb-service-btn" onclick="setService(this)">Hourly</button>
+        </div>
+        <div class="vehicle-selector">
+          <a class="active" onclick="setVehicle(this,'Sedan')">Sedan</a>
+          <a onclick="setVehicle(this,'SUV')">SUV</a>
+          <a onclick="setVehicle(this,'Sprinter')">Sprinter</a>
+        </div>
+        <div class="vehicle-info" id="vehicle-info">Up to 3 passengers · Up to 3 large bags</div>
+        <input type="text" class="booking-input" placeholder="Pickup City or Address" id="pickup-input">
+        <input type="text" class="booking-input" placeholder="Drop-off / Airport" id="dropoff-input">
+        <input type="date" class="booking-input" id="date-input">
+        <div class="booking-buttons">
+          <button class="btn-check" onclick="checkPrice()">Check Price</button>
+          <button class="btn-clear" onclick="clearForm()">Clear</button>
+        </div>
+        <p style="font-size:11px;color:#9ca3af;margin-top:10px;text-align:center;">Rates confirmed at booking. No hidden fees.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO CTA SECTION -->
+  <section style="background:linear-gradient(135deg,#f0fbff 0%,#e8f5ff 100%); padding:48px 0; border-bottom:1px solid rgba(20,183,244,0.2);">
+    <div class="wrapper">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; align-items:center;">
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; color:var(--dark); margin-bottom:8px;">First Time? Get 10% Off</h3>
+          <p style="font-size:14px; color:var(--text-light); margin:0;">Use code <strong style="color:var(--blue);">WELCOME10</strong> on your first booking.</p>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="booking.html" style="background:var(--blue); color:var(--white); padding:10px 24px; font-family:'Roboto Condensed',sans-serif; text-transform:uppercase; font-weight:700; font-size:12px; text-decoration:none; display:inline-block; transition:background 0.2s;">Book Now &amp; Save</a>
+          <a href="tel:+18001234567" style="background:var(--white); color:var(--blue); border:1px solid var(--blue); padding:10px 24px; font-family:'Roboto Condensed',sans-serif; text-transform:uppercase; font-weight:700; font-size:12px; text-decoration:none; display:inline-block; transition:all 0.2s;">Call 1-800-XXX-XXXX</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="trust-strip">
+    <div class="trust-strip-inner">
+      <div class="ts-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <strong>Real-Time Flight Tracking</strong>
+      </div>
+      <div class="ts-item">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <strong>Meet &amp; Greet Inside Terminal</strong>
+      </div>
+      <div class="ts-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <strong>Flat Rate — No Surge Pricing</strong>
+      </div>
+      <div class="ts-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <strong>GTAA Licensed &amp; Insured</strong>
+      </div>
+      <div class="ts-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <strong>24/7 Dispatch Available</strong>
+      </div>
+      <div class="ts-item">
+        <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <strong>60 Min Free Wait</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORE SERVICES TICKER -->
+  <div class="services-ticker">
+    <div class="ticker-track" id="ticker-track">
+      <a href="airport.html">Airport Transfers YYZ</a>
+      <a href="corporate.html">Corporate Car Service</a>
+      <a href="wedding.html">Wedding Limo</a>
+      <a href="events.html">Events &amp; Concerts</a>
+      <a href="hourly.html">Hourly Hire</a>
+      <a href="tours.html">City to City Transfers</a>
+      <a href="fleet.html">Sprinter Van Group Rides</a>
+      <a href="airport.html">Niagara Falls Transfers</a>
+      <a href="airport.html">Buffalo Airport BUF</a>
+      <a href="quote.html">FIFA 2026 Transportation</a>
+      <a href="airport.html">Hamilton Airport YHM</a>
+      <a href="airport.html">Billy Bishop YTZ</a>
+      <a href="tours.html">Niagara Wine Tours</a>
+      <a href="corporate.html">Executive Road Shows</a>
+      <a href="airport.html">Airport Transfers YYZ</a>
+      <a href="corporate.html">Corporate Car Service</a>
+      <a href="wedding.html">Wedding Limo</a>
+      <a href="events.html">Events &amp; Concerts</a>
+      <a href="hourly.html">Hourly Hire</a>
+      <a href="tours.html">City to City Transfers</a>
+      <a href="fleet.html">Sprinter Van Group Rides</a>
+      <a href="airport.html">Niagara Falls Transfers</a>
+      <a href="airport.html">Buffalo Airport BUF</a>
+      <a href="quote.html">FIFA 2026 Transportation</a>
+      <a href="airport.html">Hamilton Airport YHM</a>
+      <a href="airport.html">Billy Bishop YTZ</a>
+      <a href="tours.html">Niagara Wine Tours</a>
+      <a href="corporate.html">Executive Road Shows</a>
+    </div>
+  </div>
+
+  <!-- INTRO / ABOUT SECTION -->
+  <section class="intro-section">
+    <div class="wrapper">
+      <div class="intro-grid">
+        <aside class="intro-sidebar">
+          <div class="intro-stat-box">
+            <div class="stat-big">15<sup>+</sup></div>
+            <span class="stat-label">Cities Across Ontario</span>
+          </div>
+          <div class="intro-stat-box">
+            <div class="stat-big">60<span style="font-size:32px;vertical-align:middle;"> min</span></div>
+            <span class="stat-label">Complimentary Wait Time</span>
+          </div>
+          <div class="intro-sidebar-links">
+            <h4>Quick Links</h4>
+            <a href="airport.html">Airport Limo — From $75 &rarr;</a>
+            <a href="corporate.html">Corporate Hourly — From $85/hr &rarr;</a>
+            <a href="wedding.html">Wedding Packages &rarr;</a>
+            <a href="tours.html">Niagara &amp; Wine Tours &rarr;</a>
+          </div>
+        </aside>
+        <div class="intro-body">
+          <span class="section-label">TORONTO &amp; GTA CHAUFFEUR SERVICE</span>
+          <h2>Ontario's Trusted <span>Limo &amp; Chauffeur</span> Service</h2>
+          <p>Toronto Pearson International Airport processes over 50 million passengers annually, making it one of the most demanding ground transportation environments in North America. From the downtown core through Yorkville, the Financial District and Harbourfront to outlying communities across the GTA, reliable transportation is not optional — it is essential. Limo4All was built for exactly this environment. Our flat-rate structure eliminates the price uncertainty that plagues rideshare platforms on the days you can least afford a surprise. When you book at 11pm before a 6am departure, you know your driver's name, your vehicle, and your price before your alarm goes off.</p>
+          <p>We serve every corner of the Greater Toronto Area and extend across Southern Ontario to Hamilton, Guelph, Kitchener-Waterloo, London, Niagara Falls, and cross-border to Buffalo. For corporate accounts, we provide monthly billing, dedicated account managers and consistent vehicle quality across every single trip — no gig economy variables. For weddings, our fleet accommodates the full wedding party with stretch limousines and coordinated multi-vehicle packages. For airport transfers, our flight monitoring is live-data, not schedule-based.</p>
+          <h3>What's Included in Every Ride</h3>
+          <ul class="intro-checklist">
+            <li>Professional uniformed chauffeur</li>
+            <li>Real-time flight monitoring</li>
+            <li>Meet and greet inside arrivals</li>
+            <li>60 minutes complimentary wait</li>
+            <li>All tolls and airport fees included</li>
+            <li>Luggage loading and unloading</li>
+            <li>Complimentary bottled water</li>
+            <li>No surge pricing, ever</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE CARDS -->
+  <section class="promise-strip">
+    <div class="wrapper">
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="promise-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Flat Rate Promise</h4>
+          <p>Your rate is locked at booking. No surprise surcharges, no surge pricing, no metered distance fees. The number you see is the number you pay.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h4>Flight Tracking</h4>
+          <p>We monitor your live arrival time. Delays and early landings are handled automatically at no extra charge. You do not need to call us.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h4>Inside Terminal Meetup</h4>
+          <p>Your chauffeur waits inside the arrivals hall with a personalized name board. No curb circling. No navigation confusion.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h4>Always On Time</h4>
+          <p>We guarantee on-time pickup through live traffic routing, early-departure confirmation and 24/7 operations that never sleep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEHICLES SECTION -->
+  <section class="vehicles-section">
+    <div class="wrapper">
+      <div class="section-header">
+        <span class="section-label">OUR FLEET</span>
+        <h2>Upscale <span>Executive Vehicles</span></h2>
+        <p>Choose the vehicle that fits your group size, luggage needs and travel style. All vehicles include the same premium service standard.</p>
+      </div>
+      <div class="vehicle-tabs-row">
+        <div class="vtab-card featured">
+          <span class="vtab-badge">Most Popular</span>
+          <h3>Executive Sedan</h3>
+          <span class="vtab-model">Cadillac CT6 or Mercedes E-Class</span>
+          <p>The ideal choice for solo travellers and couples. Spacious rear seating, premium leather and a smooth ride through downtown traffic. Perfect for business travellers who need to arrive composed.</p>
+          <ul class="vtab-specs">
+            <li>Up to 3 passengers</li>
+            <li>Up to 3 large bags</li>
+            <li>Climate control &amp; privacy glass</li>
+            <li>Wi-Fi and charging ports</li>
+          </ul>
+          <span class="vtab-price">$75<span>/ride from Toronto</span></span>
+        </div>
+        <div class="vtab-card">
+          <h3>Luxury SUV</h3>
+          <span class="vtab-model">Cadillac Escalade or GMC Yukon</span>
+          <p>Preferred for families and groups of four to six, or travellers with oversized luggage. The most-requested vehicle for corporate group transfers and VIP arrivals.</p>
+          <ul class="vtab-specs">
+            <li>Up to 6 passengers</li>
+            <li>Up to 5 large bags</li>
+            <li>All-wheel drive available</li>
+            <li>Premium sound system</li>
+          </ul>
+          <span class="vtab-price">$95<span>/ride from Toronto</span></span>
+        </div>
+        <div class="vtab-card">
+          <h3>Executive Sprinter</h3>
+          <span class="vtab-model">Mercedes Sprinter Van</span>
+          <p>Purpose-built for corporate groups, families with multiple bags and wedding parties. Standing-height cabin, conference seating available for multi-stop transfers.</p>
+          <ul class="vtab-specs">
+            <li>Up to 14 passengers</li>
+            <li>Extra-large luggage capacity</li>
+            <li>Standing height cabin</li>
+            <li>Conference-style seating available</li>
+          </ul>
+          <span class="vtab-price">$120<span>/ride base rate</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stat-item">
+        <span class="stat-number">10,000<span class="stat-suffix">+</span></span>
+        <span class="stat-label">Rides Completed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">4.9</span>
+        <span class="stat-label">Average Google Rating</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">60<span class="stat-suffix" style="font-size:28px;"> min</span></span>
+        <span class="stat-label">Complimentary Wait</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15<span class="stat-suffix">+</span></span>
+        <span class="stat-label">Cities Served</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPULAR ROUTES -->
+  <section class="popular-routes">
+    <div class="wrapper">
+      <div class="section-header">
+        <span class="section-label">TRANSPARENT FLAT RATES</span>
+        <h2>Airport Transfer Rates <span>by City</span></h2>
+        <p>All rates are flat and locked at time of booking. No surge pricing. No meters. No surprises. Rates shown are one-way to or from Toronto Pearson International Airport (YYZ).</p>
+      </div>
+      <div class="routes-grid">
+        <a href="airport.html" class="route-card">
+          <span class="route-tag">Most Popular</span>
+          <span class="route-city">Toronto</span>
+          <span class="route-desc">Downtown &rarr; Pearson YYZ · 25–40 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$75</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$95</span></div>
+          </div>
+        </a>
+        <a href="airport.html" class="route-card">
+          <span class="route-city">Mississauga</span>
+          <span class="route-desc">Square One &rarr; Pearson YYZ · 15–25 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$80</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$100</span></div>
+          </div>
+        </a>
+        <a href="airport.html" class="route-card">
+          <span class="route-city">Brampton</span>
+          <span class="route-desc">Downtown &rarr; Pearson YYZ · 20–30 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$85</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$105</span></div>
+          </div>
+        </a>
+        <a href="airport.html" class="route-card">
+          <span class="route-city">Vaughan</span>
+          <span class="route-desc">Vaughan Mills &rarr; Pearson YYZ · 25–35 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$85</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$105</span></div>
+          </div>
+        </a>
+        <a href="airport.html" class="route-card">
+          <span class="route-city">Oakville</span>
+          <span class="route-desc">Downtown &rarr; Pearson YYZ · 25–40 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$90</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$110</span></div>
+          </div>
+        </a>
+        <a href="airport.html" class="route-card">
+          <span class="route-city">Markham</span>
+          <span class="route-desc">Unionville &rarr; Pearson YYZ · 40–55 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$95</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$115</span></div>
+          </div>
+        </a>
+        <a href="airport.html" class="route-card">
+          <span class="route-city">Richmond Hill</span>
+          <span class="route-desc">Bayview &rarr; Pearson YYZ · 35–50 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$90</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$110</span></div>
+          </div>
+        </a>
+        <a href="airport.html" class="route-card">
+          <span class="route-city">Burlington</span>
+          <span class="route-desc">Downtown &rarr; Pearson YYZ · 30–45 min</span>
+          <div class="route-prices">
+            <div class="route-price-item"><span class="route-price-label">Sedan</span><span class="route-price-val">$100</span></div>
+            <div class="route-price-item"><span class="route-price-label">SUV</span><span class="route-price-val">$120</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="pricing-note">Rates include all tolls, fuel surcharges, airport fees and gratuity. Sprinter van rates available for groups. <a href="airport.html" style="color:var(--blue);font-weight:600;">View all cities and rates &rarr;</a></div>
+      <div class="routes-cta">
+        <a href="airport.html" class="btn-dark-primary">View All Airport Rates</a>
+        <a href="booking.html" class="btn-dark-outline">Book Your Transfer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE SECTION -->
+  <section class="coverage-section">
+    <div class="wrapper">
+      <div class="coverage-grid">
+        <div class="coverage-text">
+          <span class="section-label">SERVICE AREA</span>
+          <h2>Serving Every Corner <span>of the GTA &amp; Beyond</span></h2>
+          <p>From the heart of Toronto's Financial District through Yorkville, Distillery District and Harbourfront, Limo4All picks up and drops off across every neighbourhood in the city. Whether you are departing from a hotel near Union Station or a home in the Beaches, your chauffeur arrives at your door on schedule with a pre-confirmed vehicle and a locked rate.</p>
+          <p>Our coverage extends across the entire Greater Toronto Area and beyond. We serve Meadowvale and Erin Mills in Mississauga, Woodbridge and Concord in Vaughan, Downtown Oakville and Glen Abbey, Unionville in Markham, and Bramalea in Brampton. For longer routes, we provide door-to-door service to Hamilton, Guelph, Kitchener-Waterloo, London, and Niagara Falls with the same uniformed chauffeur and flat-rate guarantee.</p>
+          <div class="highway-tags">
+            <span class="highway-tag">Hwy 400</span>
+            <span class="highway-tag">Hwy 401</span>
+            <span class="highway-tag">Hwy 404</span>
+            <span class="highway-tag">Hwy 407 ETR</span>
+            <span class="highway-tag">QEW</span>
+            <span class="highway-tag">Hwy 427</span>
+            <span class="highway-tag">Hwy 7</span>
+          </div>
+          <h3>Major Service Neighbourhoods</h3>
+        </div>
+        <div>
+          <div class="neighborhood-grid">
+            <a href="airport.html">Downtown Toronto</a>
+            <a href="airport.html">Yorkville</a>
+            <a href="airport.html">Distillery District</a>
+            <a href="airport.html">Harbourfront</a>
+            <a href="airport.html">Financial District</a>
+            <a href="airport.html">King West</a>
+            <a href="airport.html">Etobicoke</a>
+            <a href="airport.html">North York</a>
+            <a href="airport.html">Scarborough</a>
+            <a href="airport.html">Mississauga</a>
+            <a href="airport.html">Square One</a>
+            <a href="airport.html">Port Credit</a>
+            <a href="airport.html">Vaughan</a>
+            <a href="airport.html">Woodbridge</a>
+            <a href="airport.html">Markham</a>
+            <a href="airport.html">Unionville</a>
+            <a href="airport.html">Richmond Hill</a>
+            <a href="airport.html">Oakville</a>
+            <a href="airport.html">Burlington</a>
+            <a href="airport.html">Hamilton</a>
+            <a href="airport.html">Brampton</a>
+            <a href="airport.html">Aurora</a>
+            <a href="airport.html">King City</a>
+            <a href="airport.html">Milton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE + COMPARISON -->
+  <section class="why-choose-section">
+    <div class="wrapper">
+      <div class="why-choose-grid">
+        <div class="why-choose-text">
+          <span class="section-label">THE LIMO4ALL DIFFERENCE</span>
+          <h2>Why Choose <span>Limo4All</span> Over the Alternatives</h2>
+          <p>Rideshare platforms apply surge pricing precisely when you need reliability the most — early morning airport departures, late-night arrivals, bad weather and events. Taxis meter by distance and time with no price certainty before you start. Limo4All was built differently: every rate is quoted and locked before you confirm, so what you see at booking is what appears on your receipt.</p>
+          <p>Beyond pricing transparency, we cover the full service spectrum. Corporate executives use us for monthly billing accounts and recurring business travel. Families book us for weddings, proms and milestone events. Visitors hire us for Niagara wine tours and city transfers. We do everything with the same standard of vehicle quality and driver professionalism across every ride.</p>
+          <ul class="advantage-list">
+            <li>Flat rate locked at booking — no zone surprises</li>
+            <li>Real-time flight tracking and automatic adjustment</li>
+            <li>Meet and greet inside the terminal, not curbside</li>
+            <li>60 minutes free wait vs 5–10 minutes industry standard</li>
+            <li>Full-service company covering airport, corporate, weddings and tours</li>
+            <li>Monthly billing accounts available for business clients</li>
+            <li>Cross-border service to Buffalo and NYC</li>
+            <li>No cancellation fee with 24 hours notice</li>
+          </ul>
+        </div>
+        <div>
+          <div class="comparison-box">
+            <h3>How We Compare</h3>
+            <table class="comp-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th class="limo4all-col">Limo4All</th>
+                  <th>Rideshare</th>
+                  <th>Taxi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Flat Rate at Booking</td><td class="yes">Yes</td><td class="no">Surge Pricing</td><td class="no">Metered</td></tr>
+                <tr><td>Flight Tracking</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
+                <tr><td>Inside Terminal Meetup</td><td class="yes">Yes</td><td class="no">Curb Only</td><td class="no">Curb Only</td></tr>
+                <tr><td>Free Wait Time</td><td class="yes">60 Min</td><td class="no">5 Min</td><td class="no">10 Min</td></tr>
+                <tr><td>Luggage Assistance</td><td class="yes">Yes</td><td class="no">No</td><td class="no">Limited</td></tr>
+                <tr><td>24/7 Dispatch</td><td class="yes">Yes</td><td class="no">App Only</td><td class="no">Varies</td></tr>
+                <tr><td>Licensed Chauffeur</td><td class="yes">Yes</td><td class="no">Gig Driver</td><td class="yes">Licensed</td></tr>
+                <tr><td>Corporate Billing</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS / HOW TO BOOK -->
+  <section class="process-section">
+    <div class="wrapper">
+      <div class="section-header">
+        <span class="section-label">HOW IT WORKS</span>
+        <h2>Book Your Ride <span>in 4 Steps</span></h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <h4>Book Online or Call</h4>
+          <p>Use the Check Price widget above or call 1-800-XXX-XXXX. Provide your pickup address, destination, flight number and passenger count. Your rate is quoted instantly and locked at that moment.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <h4>Receive Confirmation</h4>
+          <p>You receive an email confirmation with your driver's name, vehicle description and a direct contact number. For arrivals, a second alert is sent once your flight lands.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <h4>Driver Monitors Your Flight</h4>
+          <p>We track your real landing time, not your scheduled time. A two-hour delay adjusts your driver automatically with no extra charge and no call required from you.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <h4>Arrive in Style</h4>
+          <p>For arrivals, your uniformed chauffeur meets you inside the terminal with a name board. For departures, we arrive at your door 15 minutes before scheduled pickup time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS CAROUSEL -->
+  <section class="reviews-section">
+    <div class="wrapper">
+      <div class="reviews-header">
+        <div>
+          <h2>What Our <span>Clients Say</span></h2>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:16px; font-size:13px; color:rgba(255,255,255,0.7);">
+            <span style="display:flex; align-items:center; gap:6px;"><svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>GTAA Licensed &amp; Insured</span>
+            <span style="display:flex; align-items:center; gap:6px;"><svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Background-Checked Drivers</span>
+            <span style="display:flex; align-items:center; gap:6px;"><svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>2,000+ 5-Star Reviews</span>
+          </div>
+        </div>
+        <div class="google-badge">
+          <div class="g-score">4.9</div>
+          <span class="g-stars">★★★★★</span>
+          <span class="g-label">500+ Google Reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-carousel-wrap">
+      <div class="reviews-track">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"I travel weekly for business and Limo4All handles all my airport transfers. The Escalade is always spotless and their flight tracking is flawless — they are always waiting when I land."</blockquote>
+          <div class="review-author"><strong>Jonathan M.</strong><span>Frequent Business Traveler — Toronto</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Booked the Suburban for our wedding day and it was absolutely perfect. The chauffeur was early, the vehicle was immaculate. Made our day completely stress-free."</blockquote>
+          <div class="review-author"><strong>Sarah &amp; Michael T.</strong><span>Wedding Clients — Oakville</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Our corporate account has been running two years. Consistent, professional, always on time. The monthly invoicing makes expensing seamless. Highly recommended for any business."</blockquote>
+          <div class="review-author"><strong>David K.</strong><span>Corporate Account — Mississauga</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Took the Sprinter for a group of 10 to Niagara. Driver was knowledgeable, punctual and professional the entire day. Best group transport experience we've had."</blockquote>
+          <div class="review-author"><strong>Amanda R.</strong><span>Group Tour — Hamilton</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"My flight was delayed 3 hours and I didn't have to call anyone. The driver was there waiting when I walked out of customs. That reliability is worth every dollar."</blockquote>
+          <div class="review-author"><strong>Robert L.</strong><span>Airport Transfer — Vaughan</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Booked a Niagara wine tour for my wife's birthday. The driver knew every winery, was patient and made it feel like a private concierge experience from start to finish."</blockquote>
+          <div class="review-author"><strong>Marcus D.</strong><span>Wine Tour Client — Toronto</span></div>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"I travel weekly for business and Limo4All handles all my airport transfers. The Escalade is always spotless and their flight tracking is flawless — they are always waiting when I land."</blockquote>
+          <div class="review-author"><strong>Jonathan M.</strong><span>Frequent Business Traveler — Toronto</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Booked the Suburban for our wedding day and it was absolutely perfect. The chauffeur was early, the vehicle was immaculate. Made our day completely stress-free."</blockquote>
+          <div class="review-author"><strong>Sarah &amp; Michael T.</strong><span>Wedding Clients — Oakville</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Our corporate account has been running two years. Consistent, professional, always on time. The monthly invoicing makes expensing seamless. Highly recommended for any business."</blockquote>
+          <div class="review-author"><strong>David K.</strong><span>Corporate Account — Mississauga</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Took the Sprinter for a group of 10 to Niagara. Driver was knowledgeable, punctual and professional the entire day. Best group transport experience we've had."</blockquote>
+          <div class="review-author"><strong>Amanda R.</strong><span>Group Tour — Hamilton</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"My flight was delayed 3 hours and I didn't have to call anyone. The driver was there waiting when I walked out of customs. That reliability is worth every dollar."</blockquote>
+          <div class="review-author"><strong>Robert L.</strong><span>Airport Transfer — Vaughan</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Booked a Niagara wine tour for my wife's birthday. The driver knew every winery, was patient and made it feel like a private concierge experience from start to finish."</blockquote>
+          <div class="review-author"><strong>Marcus D.</strong><span>Wine Tour Client — Toronto</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ 2-COLUMN -->
+  <section class="faq-section-full">
+    <div class="wrapper">
+      <div class="section-header">
+        <span class="section-label">GENERAL FAQ</span>
+        <h2>Frequently Asked <span>Questions</span></h2>
+      </div>
+      <div class="faq-columns">
+        <div class="faq-item-full">
+          <div class="faq-question-full">What makes Limo4All different from rideshare or taxi services?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">We provide flat-rate pricing locked at booking with no surge pricing, unlike rideshare platforms. Our uniformed professional chauffeurs pass background checks and are licensed professionals, not gig workers. We offer 60 minutes free wait time vs industry standard of 5-10 minutes. Plus, we cover airport, corporate, weddings and events — all with the same premium service standard.</div>
+        </div>
+        <div class="faq-item-full">
+          <div class="faq-question-full">How do I get a quote and book a ride?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">Use the "Check Price" widget at the top of this page, call 1-800-XXX-XXXX, or visit our booking page. Provide your location, destination and date. You'll receive an instant flat-rate quote that's locked in — no surprises at the end of the ride. Simply confirm and you're booked. We send a confirmation email with your driver's name and vehicle details.</div>
+        </div>
+        <div class="faq-item-full">
+          <div class="faq-question-full">What services do you offer beyond airport transfers?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">We offer airport transfers, corporate hourly charters, wedding transportation, event coordination, city-to-city transfers, Niagara wine tours, and executive group transportation. Whether you need a sedan for a business meeting, a stretch limo for a wedding, or a Sprinter van for a corporate group, we've got you covered 24/7 across the GTA.</div>
+        </div>
+        <div class="faq-item-full">
+          <div class="faq-question-full">Do I need to provide a credit card to book?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">For most bookings, we accept payment on account or invoice. Credit cards can be used for online booking or as a backup payment method. Corporate accounts have monthly billing options. Call 1-800-XXX-XXXX or visit our booking page to see all available payment methods for your specific trip.</div>
+        </div>
+        <div class="faq-item-full">
+          <div class="faq-question-full">Can I modify or cancel my booking?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">Yes. You can modify your booking up to 24 hours before your scheduled pickup at no charge. Cancellations made 24 hours or more in advance are free. Late cancellations (within 24 hours) may incur a fee. We're flexible — just contact us as soon as your plans change.</div>
+        </div>
+        <div class="faq-item-full">
+          <div class="faq-question-full">Are there hidden fees or extra charges?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">No. Our pricing is completely transparent. The rate you see at booking includes all tolls, fuel surcharges, airport fees, gratuity and waiting time. There are no hidden fees, surprise charges or add-ons. We're upfront about what you pay so you can budget with confidence.</div>
+        </div>
+        <div class="faq-item-full">
+          <div class="faq-question-full">Do you serve corporate accounts with recurring bookings?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">Yes. We offer business accounts with dedicated account managers, monthly billing, priority dispatch and consistent vehicle provisioning. Perfect for companies with recurring travel needs. Contact us at info@limo4all.ca or call 1-800-XXX-XXXX to discuss your corporate transportation program.</div>
+        </div>
+        <div class="faq-item-full">
+          <div class="faq-question-full">What's your service area? Do you serve areas outside Toronto?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer-full">We serve the entire Greater Toronto Area including Mississauga, Brampton, Vaughan, Markham, Oakville, and surrounding communities. We also provide flat-rate service to Hamilton, Guelph, Kitchener-Waterloo, London, Niagara Falls, and cross-border transfers to Buffalo and beyond. Use our Check Price tool to see rates for your specific route.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS SERVED SECTION -->
+  <section class="areas-served-section">
+    <div class="wrapper">
+      <div class="section-header">
+        <span class="section-label">OUR SERVICE AREA</span>
+        <h2>Serving <span>15+ Cities</span> Across the GTA &amp; Beyond</h2>
+        <p>From downtown Toronto to the far reaches of the Greater Toronto Area and across Southern Ontario. Limo4All provides flat-rate service to every major city and community in the region.</p>
+      </div>
+      <div class="cities-grid">
+        <a href="airport.html" class="city-tag"><strong>Toronto</strong><br><small>Downtown &amp; All Neighborhoods</small></a>
+        <a href="airport.html" class="city-tag"><strong>Mississauga</strong><br><small>Square One, Port Credit</small></a>
+        <a href="airport.html" class="city-tag"><strong>Brampton</strong><br><small>Downtown, Bramalea</small></a>
+        <a href="airport.html" class="city-tag"><strong>Vaughan</strong><br><small>Vaughan Mills, Maple</small></a>
+        <a href="airport.html" class="city-tag"><strong>Oakville</strong><br><small>Downtown, Glen Abbey</small></a>
+        <a href="airport.html" class="city-tag"><strong>Markham</strong><br><small>Unionville, Downtown</small></a>
+        <a href="airport.html" class="city-tag"><strong>Richmond Hill</strong><br><small>Downtown, Bayview</small></a>
+        <a href="airport.html" class="city-tag"><strong>Aurora</strong><br><small>Village, Wellington</small></a>
+        <a href="airport.html" class="city-tag"><strong>King City</strong><br><small>Core, Nobleton</small></a>
+        <a href="airport.html" class="city-tag"><strong>Burlington</strong><br><small>Downtown, Aldershot</small></a>
+        <a href="airport.html" class="city-tag"><strong>Milton</strong><br><small>Downtown, Derry Green</small></a>
+        <a href="airport.html" class="city-tag"><strong>Guelph</strong><br><small>Downtown, University</small></a>
+        <a href="airport.html" class="city-tag"><strong>Hamilton</strong><br><small>Downtown, Westdale</small></a>
+        <a href="airport.html" class="city-tag"><strong>Waterloo/Kitchener</strong><br><small>Uptown, Downtown</small></a>
+        <a href="airport.html" class="city-tag"><strong>London</strong><br><small>Downtown, Wortley</small></a>
+        <a href="airport.html" class="city-tag"><strong>Niagara Falls</strong><br><small>Fallsview, Clifton Hill</small></a>
+        <a href="airport.html" class="city-tag"><strong>St. Catharines</strong><br><small>Downtown, Wine District</small></a>
+        <a href="airport.html" class="city-tag"><strong>Simcoe</strong><br><small>Downtown</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <h2>Ready to Book Your <span>Limo Service?</span></h2>
+      <p>Flat rates, flight tracking and a uniformed chauffeur. Airport, corporate, wedding and events — 24/7 across the GTA.</p>
+      <div class="cta-band-buttons">
+        <a href="booking.html" class="btn-cta-white">Book Online</a>
+        <a href="tel:+18001234567" class="btn-cta-outline">Call 1-800-XXX-XXXX</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Limo4<span>All</span></h3>
+          <p>Professional limo and chauffeur service across the Greater Toronto Area. Licensed, insured and trusted by thousands of GTA passengers.</p>
+          <a href="tel:+18001234567" class="footer-phone">1-800-XXX-XXXX</a>
+          <a href="mailto:info@limo4all.ca" class="footer-email">info@limo4all.ca</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="airport.html">Airport Transfers</a>
+          <a href="corporate.html">Corporate</a>
+          <a href="wedding.html">Wedding</a>
+          <a href="events.html">Events</a>
+          <a href="hourly.html">Hourly Hire</a>
+          <a href="tours.html">City to City</a>
+          <a href="fleet.html">Sprinter Van</a>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="booking.html">Book Online</a>
+          <a href="fleet.html">Our Fleet</a>
+          <a href="quote.html">FIFA 2026</a>
+          <a href="locations.html">All Locations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Top Cities</h4>
+          <a href="airport.html">Toronto</a>
+          <a href="airport.html">Mississauga</a>
+          <a href="airport.html">Brampton</a>
+          <a href="airport.html">Markham</a>
+          <a href="airport.html">Vaughan</a>
+          <a href="airport.html">Oakville</a>
+          <a href="airport.html">Hamilton</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Limo4All. Premium Worldwide Ground Transportation.</span>
+        <span>Licensed &amp; Insured &nbsp;|&nbsp; GTAA Certified &nbsp;|&nbsp; Serving the GTA 24/7</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question-full').forEach(function(q) {
+      q.addEventListener('click', function() {
+        var item = q.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item-full').forEach(function(i) {
+          i.classList.remove('open');
+          var a = i.querySelector('.faq-answer-full');
+          if (a) a.style.display = 'none';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          item.querySelector('.faq-answer-full').style.display = 'block';
+        }
+      });
+    });
+
+    // Mobile nav
+    var ham = document.getElementById('hamburger');
+    var nav = document.getElementById('main-nav');
+    if (ham && nav) {
+      ham.addEventListener('click', function() {
+        nav.classList.toggle('open');
+        ham.classList.toggle('open');
+      });
+    }
+
+    // Booking widget — service buttons
+    function setService(btn) {
+      document.querySelectorAll('.bfb-service-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+
+    // Booking widget — vehicle selector
+    var vehicleInfo = {
+      'Sedan': 'Up to 3 passengers · Up to 3 large bags · Mercedes E-Class / Cadillac CT6',
+      'SUV': 'Up to 6 passengers · Up to 5 large bags · Cadillac Escalade / GMC Yukon',
+      'Sprinter': 'Up to 14 passengers · Extra-large luggage · Mercedes Sprinter Van'
+    };
+    function setVehicle(el, vehicle) {
+      document.querySelectorAll('.vehicle-selector a').forEach(function(a) { a.classList.remove('active'); });
+      el.classList.add('active');
+      var info = document.getElementById('vehicle-info');
+      if (info) info.textContent = vehicleInfo[vehicle] || '';
+    }
+
+    // Check price
+    function checkPrice() {
+      var pickup = document.getElementById('pickup-input').value.trim();
+      var dropoff = document.getElementById('dropoff-input').value.trim();
+      var date = document.getElementById('date-input').value;
+      if (!pickup || !dropoff) { alert('Please enter both pickup and drop-off locations.'); return; }
+      window.location.href = 'booking.html?pickup=' + encodeURIComponent(pickup) + '&dropoff=' + encodeURIComponent(dropoff) + '&date=' + encodeURIComponent(date);
+    }
+    function clearForm() {
+      document.getElementById('pickup-input').value = '';
+      document.getElementById('dropoff-input').value = '';
+      document.getElementById('date-input').value = '';
+    }
+  </script>
+
+</body>
+</html>
