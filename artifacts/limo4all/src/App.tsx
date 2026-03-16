@@ -201,7 +201,7 @@ const AboutPage = () => {
 };
 
 const FaqPage = () => {
-  const content = getPageContent("faq-general");
+  const content = getPageContent("faq");
   if (!content) return <NotFound />;
   return <ContentPage content={content} category="page" slug="faq-general" />;
 };
@@ -213,7 +213,7 @@ const PrivacyPage = () => {
 };
 
 const TermsPage = () => {
-  const content = getPageContent("terms-conditions-enhanced");
+  const content = getPageContent("terms-conditions");
   if (!content) return <NotFound />;
   return <ContentPage content={content} category="page" slug="terms-conditions-enhanced" />;
 };

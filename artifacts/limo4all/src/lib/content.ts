@@ -108,7 +108,7 @@ export function getHubContent(slug: string): string | null {
 }
 
 export function getPageContent(slug: string): string | null {
-  return pagesRaw[`../content/pages/page-${slug}.md`] ?? null;
+  return pagesRaw[`../content/pages/${slug}.md`] ?? null;
 }
 
 // ─── Utility: extract H1 title from markdown ─────────────────────────────────

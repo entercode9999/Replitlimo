@@ -12,9 +12,9 @@ const SITE_URL = 'https://www.limo4all.ca';
 
 const PAGE_CANONICAL: Record<string, string> = {
   'about-us': '/about',
-  'faq-general': '/faq',
+  'faq': '/faq',
   'privacy-policy': '/privacy',
-  'terms-conditions-enhanced': '/terms',
+  'terms-conditions': '/terms',
   'why-choose-us': '/why-choose-us',
   'airport-transportation': '/airport',
   'corporate-transportation': '/corporate',
