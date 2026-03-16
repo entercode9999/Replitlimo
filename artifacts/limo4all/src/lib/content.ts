@@ -11,7 +11,7 @@
 // ─── Raw glob imports (eager = bundled at build time) ─────────────────────────
 // Using `as: 'raw'` returns Record<path, string> directly.
 
-const cityRaw = import.meta.glob('../content/city/*.md', {
+const cityRaw = import.meta.glob('../content/airport-limo/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
@@ -81,7 +81,7 @@ export const CITY_SLUGS = Object.keys(CITY_NUM);
 export function getCityContent(slug: string): string | null {
   const num = CITY_NUM[slug];
   if (!num) return null;
-  return cityRaw[`../content/city/${num}-${slug}.md`] ?? null;
+  return cityRaw[`../content/airport-limo/${num}-${slug}.md`] ?? null;
 }
 
 export function getCorporateContent(slug: string): string | null {
