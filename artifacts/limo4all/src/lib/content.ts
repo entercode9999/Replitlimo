@@ -35,7 +35,7 @@ const carServiceRaw = import.meta.glob('../content/car-service/*.md', {
   eager: true,
 }) as Record<string, string>;
 
-const airportsRaw = import.meta.glob('../content/airports/*.md', {
+const airportsRaw = import.meta.glob('../content/local-airports/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
@@ -100,7 +100,7 @@ export function getCarServiceContent(slug: string): string | null {
 
 // Airport slugs: toronto-pearson, billy-bishop, hamilton, buffalo
 export function getAirportContent(slug: string): string | null {
-  return airportsRaw[`../content/airports/airport-${slug}.md`] ?? null;
+  return airportsRaw[`../content/local-airports/airport-${slug}.md`] ?? null;
 }
 
 export function getHubContent(slug: string): string | null {
