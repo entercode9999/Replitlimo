@@ -47,7 +47,7 @@ const hubRaw = import.meta.glob('../content/hub/*.md', {
   eager: true,
 }) as Record<string, string>;
 
-const pagesRaw = import.meta.glob('../content/pages/*.md', {
+const pagesRaw = import.meta.glob('../content/general/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
@@ -108,7 +108,7 @@ export function getHubContent(slug: string): string | null {
 }
 
 export function getPageContent(slug: string): string | null {
-  return pagesRaw[`../content/pages/${slug}.md`] ?? null;
+  return pagesRaw[`../content/general/${slug}.md`] ?? null;
 }
 
 // ─── Utility: extract H1 title from markdown ─────────────────────────────────
