@@ -23,7 +23,7 @@ const corporateRaw = import.meta.glob('../content/corporate-car-service/*.md', {
   eager: true,
 }) as Record<string, string>;
 
-const weddingRaw = import.meta.glob('../content/wedding/*.md', {
+const weddingRaw = import.meta.glob('../content/wedding-limo/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
@@ -91,7 +91,7 @@ export function getCorporateContent(slug: string): string | null {
 }
 
 export function getWeddingContent(slug: string): string | null {
-  return weddingRaw[`../content/wedding/wedding-limo-${slug}.md`] ?? null;
+  return weddingRaw[`../content/wedding-limo/wedding-limo-${slug}.md`] ?? null;
 }
 
 export function getCarServiceContent(slug: string): string | null {
