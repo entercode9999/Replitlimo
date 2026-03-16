@@ -17,7 +17,7 @@ const cityRaw = import.meta.glob('../content/airport-limo/*.md', {
   eager: true,
 }) as Record<string, string>;
 
-const corporateRaw = import.meta.glob('../content/corporate/*.md', {
+const corporateRaw = import.meta.glob('../content/corporate-car-service/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
@@ -87,7 +87,7 @@ export function getCityContent(slug: string): string | null {
 export function getCorporateContent(slug: string): string | null {
   const num = CITY_NUM[slug];
   if (!num) return null;
-  return corporateRaw[`../content/corporate/corporate-${num}-${slug}.md`] ?? null;
+  return corporateRaw[`../content/corporate-car-service/corporate-${num}-${slug}.md`] ?? null;
 }
 
 export function getWeddingContent(slug: string): string | null {
