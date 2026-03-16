@@ -9,6 +9,7 @@ import { Quote } from "@/pages/Quote";
 import { GenericPage } from "@/pages/GenericPage";
 import { ContentPage } from "@/pages/ContentPage";
 import NotFound from "@/pages/not-found";
+import { HubPage } from "@/pages/HubPage";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { VehiclesSection } from "@/components/home/VehiclesSection";
 import { ToursSection } from "@/components/home/ToursSection";
@@ -30,23 +31,9 @@ const queryClient = new QueryClient();
 
 // ─── Styled service hub pages (keep existing design) ─────────────────────────
 
-const AirportHub = () => {
-  const content = getHubContent("airport-transportation");
-  if (!content) return <NotFound />;
-  return <ContentPage content={content} category="page" slug="airport-transportation" />;
-};
-
-const CorporateHub = () => {
-  const content = getHubContent("corporate-transportation");
-  if (!content) return <NotFound />;
-  return <ContentPage content={content} category="page" slug="corporate-transportation" />;
-};
-
-const WeddingHub = () => {
-  const content = getHubContent("wedding-transportation");
-  if (!content) return <NotFound />;
-  return <ContentPage content={content} category="page" slug="wedding-transportation" />;
-};
+const AirportHub = () => <HubPage hub="airport" />;
+const CorporateHub = () => <HubPage hub="corporate" />;
+const WeddingHub = () => <HubPage hub="wedding" />;
 
 const EventsHub = () => (
   <GenericPage
@@ -153,11 +140,7 @@ const ContactPage = () => (
 
 // ─── Markdown-based hub pages ─────────────────────────────────────────────────
 
-const CarServiceHub = () => {
-  const content = getHubContent("car-service");
-  if (!content) return <NotFound />;
-  return <ContentPage content={content} category="page" slug="car-service" />;
-};
+const CarServiceHub = () => <HubPage hub="car-service" />;
 
 const AirportsHub = () => {
   const content = getHubContent("local-airports");
